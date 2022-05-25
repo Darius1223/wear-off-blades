@@ -1,5 +1,4 @@
 import sys
-from typing import List, Tuple
 
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import (
@@ -43,7 +42,7 @@ class MainWindow(QMainWindow):
         self.grid_layout = QGridLayout()
         self.central_widget.setLayout(self.grid_layout)
         # widgets
-        self.plot_widget = PlotWidget()
+        self.plot_widget = PlotWidget(self.plot_data)
         self.table_widget = PlotTable(self.plot_data)
         self.control_widget = ControlWidget(self.table_widget, self.plot_widget)
         # plot
@@ -79,6 +78,13 @@ class PlotTable(QTableWidget):
         self.setColumnCount(2)
         self.update_ui()
 
+    def update_data(self):
+        self.plot_data.current_plot = self.get_values()
+
+    def get_values(self):
+        for ind in range(self.rowCount()):
+            yield int(self.item(ind, 0).text() or 0), int(self.item(ind, 1).text() or 0)
+
     def update_ui(self):
         self.setRowCount(self.plot_data.row_count)
         for ind_row, vector in enumerate(self.plot_data.current_plot):
@@ -100,18 +106,25 @@ class ControlWidget(QWidget, Ui_Form):
     def _init_ui(self):
         self.row_count_button.clicked.connect(self._set_row_count_event)
         self.row_count_spin_box.setValue(self.table.rowCount())
-        self.plot_button.clicked.connect(self.plot_widget.plot)
+        self.plot_button.clicked.connect(self._plot_event)
+
+    def _plot_event(self):
+        self.table.update_data()
+        self.plot_widget.plot()
 
     def _set_row_count_event(self):
         value = self.row_count_spin_box.value()
         self.table.setRowCount(value)
+        self.table.plot_data.row_count = value
 
 
 class PlotWidget(QWidget):
     """Виджет для отображения графика"""
 
-    def __init__(self):
+    def __init__(self, plot_data: "PlotData"):
         super().__init__()
+        self.plot_data = plot_data
+
         self.figure: Figure = plt.figure()
 
         self.canvas = FigureCanvas(self.figure)
@@ -130,11 +143,15 @@ class PlotWidget(QWidget):
     def plot(self):
         data = [random.random() for i in range(10)]
 
+        self.figure.clear()
+
         colors = "bgrcmk"
         ax = self.figure.add_subplot(111)
-        ax.plot(data, random.choice(colors))
-        ax.plot([random.random() for i in range(10)], random.choice(colors))
-        # self.figure.clear()
+        print(data)
+        print(self.plot_data.x_data)
+        print(self.plot_data.y_data)
+        ax.plot(self.plot_data.x_data, self.plot_data.y_data, c=random.choice(colors))
+        # ax.plot(self.plot_data.x_data, self.plot_data.y_data, color=random.choice(colors))
         # ax = self.figure.add_subplot(111)
         # az = self.figure.add_subplot(111)
         # # ax = self.figure.add_subplot(111)
