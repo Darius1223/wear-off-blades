@@ -1,5 +1,5 @@
 import copy
-from typing import Tuple, List
+from typing import List
 
 import settings
 
@@ -25,7 +25,8 @@ class PlotData:
         for _ in range(abs(dist)):
             if dist > 0:
                 self.data.append(
-                    [copy.copy(settings.DEFAULT_VECTOR) for _ in range(self.row_count)])
+                    [copy.copy(settings.DEFAULT_VECTOR) for _ in range(self.row_count)]
+                )
             else:
                 self.data.pop()
 

@@ -9,7 +9,11 @@ from PyQt5.QtWidgets import (
     QWidget,
     QGridLayout,
     QLabel,
-    QTableWidget, QTableWidgetItem, QComboBox, QFormLayout, QSpinBox,
+    QTableWidget,
+    QTableWidgetItem,
+    QComboBox,
+    QFormLayout,
+    QSpinBox,
 )
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -97,7 +101,7 @@ class PlotTable(QTableWidget):
 
 
 class ControlWidget(QWidget):
-    """ Виджет управления графиками """
+    """Виджет управления графиками"""
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -197,7 +201,11 @@ class PlotWidget(QWidget):
         colors = "bgrcmk"
         ax = self.figure.add_subplot(111)
         for ind, _ in enumerate(self.plot_data.data):
-            ax.plot(self.plot_data.x_data(ind), self.plot_data.y_data(ind), c=random.choice(colors))
+            ax.plot(
+                self.plot_data.x_data(ind),
+                self.plot_data.y_data(ind),
+                c=random.choice(colors),
+            )
 
         # # ay.plot(data, "*-")
         # # refresh canvas
