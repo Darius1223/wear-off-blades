@@ -1,5 +1,5 @@
 from PyQt5 import QtGui
-from PyQt5.QtGui import QDoubleValidator
+from PyQt5.QtGui import QDoubleValidator, QKeySequence
 from PyQt5.QtWidgets import QMainWindow, QLineEdit
 
 from entities import WearData
@@ -19,7 +19,9 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         self.setWindowIcon(QtGui.QIcon("images/icon1.ico"))
         self.plot_window = PlotWindow()
         self.start_plot_push_button.clicked.connect(self._start_plot_event)
-
+        # Actions
+        self.about_action.setShortcut(QKeySequence("F1"))
+        self.authors_action.setShortcut(QKeySequence("F2"))
         # Events
         section_events = [
             {
@@ -40,6 +42,36 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
                 "result_field": self.bluntingLineEdit,
                 "button": self.calculateBluntingPushButton,
             },
+            {
+                "fields": [
+                    (self.frequencLineEdit, "Частота вращения ножа", "frequency"),
+                    (self.timeTestLineEdit, "Время испытания", "time_test"),
+                    (self.beforeTestLineEdit2, "До испытаний", "before_test"),
+                    (self.afterTestLineEdit2, "После испытаний", "after_test"),
+                ],
+                "calculate": self.data.calculate_operating_time,
+                "result_field": self.operatingTimeLneEdit,
+                "button": self.calculateOperatingTimePushButton,
+            },
+            {
+                "fields": [
+                    (self.operatingTimeLneEdit3, "Предельная наработка", "operating_time"),
+                    (self.maxSpeedLineEdit, "Макс. скорость резанья", "max_speed"),
+                ],
+                "calculate": self.data.calculate_resource,
+                "result_field": self.resourceLineEdit,
+                "button": self.calculateResourcePushButton,
+            },
+            {
+                "fields": [
+                    (self.operatingTimeLneEdit_2, "Предельная наработка", "operating_time"),
+                    (self.timeTestLineEdit2, "Время испытания ножа", "time_test"),
+                    (self.maxSpeedLineEdit2, "Макс. скорость резанья", "max_speed"),
+                ],
+                "calculate": self.data.calculate_ratio,
+                "result_field": self.ratioLineEdit,
+                "button": self.calculateRatioPushButton,
+            },
         ]
         for section_event in section_events:
             section_event["button"].clicked.connect(
@@ -55,15 +87,30 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         line_edits = [
             self.beforeTestLineEdit,
             self.afterTestLineEdit,
+            self.beforeTestLineEdit2,
+            self.afterTestLineEdit2,
             self.radiusLineEdit,
             self.bluntingLineEdit,
+            self.timeTestLineEdit,
+            self.timeTestLineEdit2,
+            self.operatingTimeLneEdit,
+            self.frequencLineEdit,
+            self.widthLineEdit,
         ]
         for line_edit in line_edits:
             line_edit.setValidator(validator)
 
         # Twins
-        self.beforeTestLineEdit.textChanged.connect(self.update_before_twin_items)
-        self.afterTestLineEdit.textChanged.connect(self.update_after_twin_items)
+        twins = [
+            (self.beforeTestLineEdit, self.beforeTestLineEdit2),
+            (self.afterTestLineEdit, self.afterTestLineEdit2),
+            (self.timeTestLineEdit, self.timeTestLineEdit2),
+            (self.operatingTimeLneEdit, self.operatingTimeLneEdit_2),
+            (self.operatingTimeLneEdit, self.operatingTimeLneEdit3),
+            (self.maxSpeedLineEdit, self.maxSpeedLineEdit2),
+        ]
+        for first, second in twins:
+            self.update_twin_items(first, second)
 
     def calculate_event(self, fields, calculate, result_field):
         @catch_handle
@@ -82,20 +129,16 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
 
     @catch_handle
     def _calculate_blunting_event(self):
-        self.data.before_test = self.get_integer(
-            self.beforeTestLineEdit, "До испытаний"
-        )
-        self.data.after_test = self.get_integer(
-            self.afterTestLineEdit, "После испытаний"
-        )
+        self.data.before_test = self.get_integer(self.beforeTestLineEdit, "До испытаний")
+        self.data.after_test = self.get_integer(self.afterTestLineEdit, "После испытаний")
         self.data.calculate_blunting()
         self.wearLineEdit.setText(str(self.data.wear))
 
-    def update_before_twin_items(self, e):
-        self.beforeTestLineEdit2.setText(e)
+    def update_twin_items(self, first: QLineEdit, second: QLineEdit):  # noqa
+        def update(e):
+            second.setText(e)
 
-    def update_after_twin_items(self, e):
-        self.afterTestLineEdit2.setText(e)
+        first.textChanged.connect(update)  # noqa
 
     def get_integer(self, item: QLineEdit, field_name: str):  # noqa
         if item.text():

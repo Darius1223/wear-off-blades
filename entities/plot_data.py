@@ -24,9 +24,7 @@ class PlotData:
         dist = new_count - self.plot_count
         for _ in range(abs(dist)):
             if dist > 0:
-                self.data.append(
-                    [copy.copy(settings.DEFAULT_VECTOR) for _ in range(self.row_count)]
-                )
+                self.data.append([copy.copy(settings.DEFAULT_VECTOR) for _ in range(self.row_count)])
             else:
                 self.data.pop()
 

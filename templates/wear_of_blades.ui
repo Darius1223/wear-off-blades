@@ -62,7 +62,7 @@
      </widget>
     </item>
     <item row="10" column="5">
-     <widget class="QLineEdit" name="fifth_lineEdit1">
+     <widget class="QLineEdit" name="operatingTimeLneEdit_2">
       <property name="inputMask">
        <string notr="true"/>
       </property>
@@ -94,7 +94,7 @@
      </widget>
     </item>
     <item row="3" column="5">
-     <widget class="QLineEdit" name="fourth_lineEdit1">
+     <widget class="QLineEdit" name="operatingTimeLneEdit3">
       <property name="inputMask">
        <string notr="true"/>
       </property>
@@ -175,7 +175,7 @@
      </widget>
     </item>
     <item row="5" column="5">
-     <widget class="QLineEdit" name="fourth_lineEdit3">
+     <widget class="QLineEdit" name="resourceLineEdit">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -189,6 +189,9 @@
       <property name="text">
        <string/>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
       <property name="placeholderText">
        <string>Ресурс ножа, ч</string>
       </property>
@@ -198,7 +201,7 @@
      </widget>
     </item>
     <item row="20" column="1">
-     <widget class="QLineEdit" name="third_lineEdit2">
+     <widget class="QLineEdit" name="timeTestLineEdit">
       <property name="placeholderText">
        <string>Значение, мин</string>
       </property>
@@ -301,7 +304,7 @@
      </widget>
     </item>
     <item row="13" column="5">
-     <widget class="QLineEdit" name="fifth_lineEdit4">
+     <widget class="QLineEdit" name="ratioLineEdit">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -311,6 +314,9 @@
       </property>
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Коэф. ускоренных испытаний</string>
@@ -366,7 +372,7 @@
      </widget>
     </item>
     <item row="5" column="4">
-     <widget class="QPushButton" name="fourth_pushButton">
+     <widget class="QPushButton" name="calculateResourcePushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -419,7 +425,7 @@
      </widget>
     </item>
     <item row="19" column="1">
-     <widget class="QLineEdit" name="third_lineEdit1">
+     <widget class="QLineEdit" name="frequencLineEdit">
       <property name="inputMask">
        <string notr="true"/>
       </property>
@@ -435,7 +441,7 @@
      </widget>
     </item>
     <item row="11" column="5">
-     <widget class="QLineEdit" name="fifth_lineEdit2">
+     <widget class="QLineEdit" name="timeTestLineEdit2">
       <property name="placeholderText">
        <string>Значение, мин</string>
       </property>
@@ -445,7 +451,7 @@
      </widget>
     </item>
     <item row="23" column="1">
-     <widget class="QLineEdit" name="third_lineEdit5">
+     <widget class="QLineEdit" name="operatingTimeLneEdit">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -455,6 +461,9 @@
       </property>
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Предельная наработка, м</string>
@@ -554,7 +563,7 @@
      </widget>
     </item>
     <item row="4" column="5">
-     <widget class="QLineEdit" name="fourth_lineEdit2">
+     <widget class="QLineEdit" name="maxSpeedLineEdit">
       <property name="placeholderText">
        <string>Значение, мин</string>
       </property>
@@ -625,7 +634,7 @@
      </widget>
     </item>
     <item row="13" column="4">
-     <widget class="QPushButton" name="fifth_pushButton">
+     <widget class="QPushButton" name="calculateRatioPushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -683,7 +692,7 @@
      </widget>
     </item>
     <item row="23" column="0">
-     <widget class="QPushButton" name="third_pushButton">
+     <widget class="QPushButton" name="calculateOperatingTimePushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -745,7 +754,7 @@
      </widget>
     </item>
     <item row="12" column="5">
-     <widget class="QLineEdit" name="fifth_lineEdit3">
+     <widget class="QLineEdit" name="maxSpeedLineEdit2">
       <property name="placeholderText">
        <string>Значение, м/мин</string>
       </property>
@@ -834,7 +843,7 @@
    <property name="defaultUp">
     <bool>false</bool>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="about_menu">
     <property name="title">
      <string>О программе</string>
     </property>
@@ -842,18 +851,18 @@
      <bool>false</bool>
     </property>
     <addaction name="separator"/>
-    <addaction name="about"/>
-    <addaction name="authors"/>
+    <addaction name="about_action"/>
+    <addaction name="authors_action"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
      <string>Помощь</string>
     </property>
    </widget>
-   <addaction name="menu"/>
+   <addaction name="about_menu"/>
    <addaction name="menu_2"/>
   </widget>
-  <action name="about">
+  <action name="about_action">
    <property name="text">
     <string>Описание</string>
    </property>
@@ -861,7 +870,7 @@
     <string/>
    </property>
   </action>
-  <action name="authors">
+  <action name="authors_action">
    <property name="text">
     <string>Авторы</string>
    </property>
