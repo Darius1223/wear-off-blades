@@ -23,9 +23,9 @@ class PlotWindow(QMainWindow):
 
     def _init_ui(self):
         self.setWindowIcon(QtGui.QIcon("images/icon1.ico"))
-        self.resize(900, 650)
-        self.setMinimumSize(QSize(900, 650))
-        self.setMaximumSize(QSize(900, 650))
+        # self.resize(900, 650)
+        # self.setMinimumSize(QSize(900, 650))
+        # self.setMaximumSize(QSize(900, 650))
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(12)
@@ -48,11 +48,13 @@ class PlotWindow(QMainWindow):
         # table
         self.table_label = QLabel("Таблица")
         self.table_label.setFont(font)
+        self.table_label.setFixedHeight(20)
         self.grid_layout.addWidget(self.table_label, 0, 1)
         self.grid_layout.addWidget(self.table_widget, 1, 1, 2, 1)
         # control
         self.control_label = QLabel("Панель управления")
         self.control_label.setFont(font)
+        self.control_label.setFixedHeight(20)
         self.grid_layout.addWidget(self.control_label, 0, 0)
         self.grid_layout.addWidget(self.control_widget, 1, 0)
 

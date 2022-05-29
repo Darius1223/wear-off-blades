@@ -178,7 +178,7 @@
      <widget class="QLineEdit" name="resourceLineEdit">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -307,7 +307,7 @@
      <widget class="QLineEdit" name="ratioLineEdit">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -345,7 +345,7 @@
      <widget class="QLineEdit" name="bluntingLineEdit">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -454,7 +454,7 @@
      <widget class="QLineEdit" name="operatingTimeLneEdit">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>
@@ -672,7 +672,7 @@
      <widget class="QLineEdit" name="wearLineEdit">
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>8</pointsize>
         <weight>50</weight>
         <bold>false</bold>
        </font>

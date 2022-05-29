@@ -1,10 +1,12 @@
 from PyQt5 import QtGui
 from PyQt5.QtGui import QDoubleValidator, QKeySequence
-from PyQt5.QtWidgets import QMainWindow, QLineEdit
+from PyQt5.QtWidgets import QMainWindow, QLineEdit, QMessageBox
 
+import texts
 from entities import WearData
 from templates.wear_of_blades import Ui_WearOfBlades
 from utils.handles import catch_handle
+from utils.messages import show_dialog
 from windows import PlotWindow
 
 
@@ -21,6 +23,27 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         self.start_plot_push_button.clicked.connect(self._start_plot_event)
         # Actions
         self.about_action.setShortcut(QKeySequence("F1"))
+        self.about_action.triggered.connect(
+            (
+                lambda: show_dialog(
+                    title="О программе",
+                    body=texts.ABOUT_TEXT,
+                    msg_type=QMessageBox.Information,
+                    info="Все права защищены.",
+                )
+            )
+        )
+        self.authors_action.triggered.connect(
+            (
+                lambda: show_dialog(
+                    title="Авторы",
+                    body=texts.AUTHORS_TEXT,
+                    msg_type=QMessageBox.Information,
+                    info="Спасибо за пользование нашей программой!",
+                )
+            )
+        )
+
         self.authors_action.setShortcut(QKeySequence("F2"))
         # Events
         section_events = [
