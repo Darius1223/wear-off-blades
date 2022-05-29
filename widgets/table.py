@@ -10,8 +10,8 @@ class TableWidget(QTableWidget):
         self._init_ui()
 
     def _init_ui(self):
-        self.setHorizontalHeaderLabels(("X", "Y"))
         self.setColumnCount(2)
+        self.setHorizontalHeaderLabels(['Время, сек', 'Износ ножа, мм'])
         self.setFixedWidth(225)
         self.cellChanged.connect(self._update_data_by_table)
         self.update_ui()
