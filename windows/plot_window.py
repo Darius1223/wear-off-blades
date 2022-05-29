@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import (
     QLabel,
 )
 
-from entities.data import PlotData
+from entities import PlotData
 from widgets import PlotWidget, ControlWidget, TableWidget
 
 

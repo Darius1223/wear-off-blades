@@ -197,22 +197,6 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QLineEdit" name="first_lineEdit1">
-      <property name="inputMask">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Значение, мм</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="20" column="1">
      <widget class="QLineEdit" name="third_lineEdit2">
       <property name="placeholderText">
@@ -245,7 +229,7 @@
      </widget>
     </item>
     <item row="10" column="1">
-     <widget class="QLineEdit" name="second_lineEdit1">
+     <widget class="QLineEdit" name="radiusLineEdit">
       <property name="inputMask">
        <string notr="true"/>
       </property>
@@ -261,7 +245,7 @@
      </widget>
     </item>
     <item row="21" column="1">
-     <widget class="QLineEdit" name="third_lineEdit3">
+     <widget class="QLineEdit" name="beforeTestLineEdit2">
       <property name="placeholderText">
        <string>Значение, мм</string>
       </property>
@@ -292,7 +276,7 @@
      </widget>
     </item>
     <item row="11" column="1">
-     <widget class="QLineEdit" name="second_lineEdit2">
+     <widget class="QLineEdit" name="widthLineEdit">
       <property name="placeholderText">
        <string>Значение, мм</string>
       </property>
@@ -352,7 +336,7 @@
      </widget>
     </item>
     <item row="13" column="1">
-     <widget class="QLineEdit" name="second_lineEdit3">
+     <widget class="QLineEdit" name="bluntingLineEdit">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -362,6 +346,9 @@
       </property>
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Относительное затупление, %</string>
@@ -399,7 +386,7 @@
      </widget>
     </item>
     <item row="22" column="1">
-     <widget class="QLineEdit" name="third_lineEdit4">
+     <widget class="QLineEdit" name="afterTestLineEdit2">
       <property name="placeholderText">
        <string>Значение, мм</string>
       </property>
@@ -557,7 +544,7 @@
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLineEdit" name="first_lineEdit2">
+     <widget class="QLineEdit" name="afterTestLineEdit">
       <property name="placeholderText">
        <string>Значение, мм</string>
       </property>
@@ -673,7 +660,7 @@
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLineEdit" name="first_lineEdit3">
+     <widget class="QLineEdit" name="wearLineEdit">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -683,6 +670,9 @@
       </property>
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
       <property name="placeholderText">
        <string>Величина износа, мм</string>
@@ -713,7 +703,7 @@
      </widget>
     </item>
     <item row="13" column="0">
-     <widget class="QPushButton" name="second_pushButton">
+     <widget class="QPushButton" name="calculateBluntingPushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -780,7 +770,7 @@
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QPushButton" name="first_pushButton">
+     <widget class="QPushButton" name="calculateWearPushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -811,6 +801,22 @@
       </property>
       <property name="text">
        <string> 4. Ресурс дискового ножа, ч</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="beforeTestLineEdit">
+      <property name="inputMask">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Значение, мм</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
