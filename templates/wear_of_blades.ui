@@ -37,30 +37,14 @@
     <string notr="true"/>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="5" column="4" colspan="2">
-     <widget class="QPushButton" name="fourth_pushButton">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Рассчитать</string>
-      </property>
-     </widget>
-    </item>
+    <property name="bottomMargin">
+     <number>30</number>
+    </property>
     <item row="4" column="4">
      <widget class="QLabel" name="fourth_name2">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -87,26 +71,6 @@
       </property>
       <property name="placeholderText">
        <string>Значение, м</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="14" column="4" colspan="2">
-     <widget class="QLineEdit" name="fifth_lineEdit4">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Коэф. ускоренных испытаний</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>true</bool>
@@ -145,11 +109,14 @@
       </property>
      </widget>
     </item>
-    <item row="20" column="0">
+    <item row="21" column="0">
      <widget class="QLabel" name="third_name3">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <weight>50</weight>
         <italic>true</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
@@ -157,11 +124,14 @@
       </property>
      </widget>
     </item>
-    <item row="19" column="0">
+    <item row="20" column="0">
      <widget class="QLabel" name="third_name2">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <weight>50</weight>
         <italic>true</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
@@ -180,6 +150,7 @@
      <widget class="QLabel" name="fifth_name3">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -203,6 +174,29 @@
       </property>
      </widget>
     </item>
+    <item row="5" column="5">
+     <widget class="QLineEdit" name="fourth_lineEdit3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Ресурс ножа, ч</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item row="3" column="1">
      <widget class="QLineEdit" name="first_lineEdit1">
       <property name="inputMask">
@@ -219,27 +213,7 @@
       </property>
      </widget>
     </item>
-    <item row="13" column="4" colspan="2">
-     <widget class="QPushButton" name="fifth_pushButton">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Рассчитать</string>
-      </property>
-     </widget>
-    </item>
-    <item row="19" column="1">
+    <item row="20" column="1">
      <widget class="QLineEdit" name="third_lineEdit2">
       <property name="placeholderText">
        <string>Значение, мин</string>
@@ -249,30 +223,11 @@
       </property>
      </widget>
     </item>
-    <item row="22" column="0" colspan="2">
-     <widget class="QPushButton" name="third_pushButton">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Рассчитать</string>
-      </property>
-     </widget>
-    </item>
     <item row="10" column="4">
      <widget class="QLabel" name="fifth_name1">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -305,27 +260,7 @@
       </property>
      </widget>
     </item>
-    <item row="23" column="0" colspan="2">
-     <widget class="QLineEdit" name="third_lineEdit5">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Предельная наработка, м</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="20" column="1">
+    <item row="21" column="1">
      <widget class="QLineEdit" name="third_lineEdit3">
       <property name="placeholderText">
        <string>Значение, мм</string>
@@ -339,6 +274,7 @@
      <widget class="QLabel" name="fourth_name1">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -365,10 +301,12 @@
       </property>
      </widget>
     </item>
-    <item row="17" column="0" colspan="2">
+    <item row="18" column="0" colspan="2">
      <widget class="QLabel" name="third_title">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -378,21 +316,8 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="first_title">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string> 1. Величина износа дискового ножа, мм</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="4" colspan="2">
-     <widget class="QLineEdit" name="fourth_lineEdit3">
+    <item row="13" column="5">
+     <widget class="QLineEdit" name="fifth_lineEdit4">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -403,11 +328,43 @@
       <property name="focusPolicy">
        <enum>Qt::StrongFocus</enum>
       </property>
+      <property name="placeholderText">
+       <string>Коэф. ускоренных испытаний</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="first_title">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
-       <string/>
+       <string> 1. Величина износа дискового ножа, мм</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QLineEdit" name="second_lineEdit3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
       </property>
       <property name="placeholderText">
-       <string>Ресурс ножа, ч</string>
+       <string>Относительное затупление, %</string>
       </property>
       <property name="clearButtonEnabled">
        <bool>true</bool>
@@ -421,46 +378,8 @@
       </property>
      </widget>
     </item>
-    <item row="21" column="1">
-     <widget class="QLineEdit" name="third_lineEdit4">
-      <property name="placeholderText">
-       <string>Значение, мм</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QLabel" name="first_name2">
-      <property name="font">
-       <font>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string> &lt;b&gt;После испытаний, мм&lt;/b&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item row="18" column="1">
-     <widget class="QLineEdit" name="third_lineEdit1">
-      <property name="inputMask">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="placeholderText">
-       <string>Значение, об/мин</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0" colspan="2">
-     <widget class="QPushButton" name="first_pushButton">
+    <item row="5" column="4">
+     <widget class="QPushButton" name="fourth_pushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -479,6 +398,55 @@
       </property>
      </widget>
     </item>
+    <item row="22" column="1">
+     <widget class="QLineEdit" name="third_lineEdit4">
+      <property name="placeholderText">
+       <string>Значение, мм</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="first_name2">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <weight>75</weight>
+        <italic>true</italic>
+        <bold>true</bold>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string> &lt;b&gt;После испытаний, мм&lt;/b&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="6">
+     <widget class="Line" name="line_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="19" column="1">
+     <widget class="QLineEdit" name="third_lineEdit1">
+      <property name="inputMask">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>Значение, об/мин</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
     <item row="11" column="5">
      <widget class="QLineEdit" name="fifth_lineEdit2">
       <property name="placeholderText">
@@ -489,10 +457,31 @@
       </property>
      </widget>
     </item>
-    <item row="18" column="0">
+    <item row="23" column="1">
+     <widget class="QLineEdit" name="third_lineEdit5">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Предельная наработка, м</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="19" column="0">
      <widget class="QLabel" name="third_name1">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -513,6 +502,7 @@
      <widget class="QLabel" name="fifth_name2">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -533,9 +523,11 @@
      <widget class="QLabel" name="first_name1">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="frameShadow">
@@ -549,10 +541,12 @@
       </property>
      </widget>
     </item>
-    <item row="17" column="4" colspan="2">
+    <item row="18" column="4" colspan="2">
      <widget class="QLabel" name="label">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -572,26 +566,6 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="0" colspan="2">
-     <widget class="QLineEdit" name="first_lineEdit3">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Величина износа, мм</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="5">
      <widget class="QLineEdit" name="fourth_lineEdit2">
       <property name="placeholderText">
@@ -602,7 +576,7 @@
       </property>
      </widget>
     </item>
-    <item row="18" column="4" rowspan="3" colspan="2">
+    <item row="19" column="4" rowspan="3" colspan="2">
      <widget class="QPushButton" name="start_plot_push_button">
       <property name="font">
        <font>
@@ -625,6 +599,7 @@
      <widget class="QLabel" name="second_name1">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -645,6 +620,7 @@
      <widget class="QLabel" name="second_name2">
       <property name="font">
        <font>
+        <family>Arial</family>
         <weight>75</weight>
         <italic>true</italic>
         <bold>true</bold>
@@ -661,16 +637,98 @@
       </property>
      </widget>
     </item>
+    <item row="13" column="4">
+     <widget class="QPushButton" name="fifth_pushButton">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Рассчитать</string>
+      </property>
+     </widget>
+    </item>
     <item row="9" column="0" colspan="2">
      <widget class="QLabel" name="second_title">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
       <property name="text">
        <string> 2. Относительное затупление дискового ножа, %</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLineEdit" name="first_lineEdit3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Величина износа, мм</string>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="23" column="0">
+     <widget class="QPushButton" name="third_pushButton">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Рассчитать</string>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0">
+     <widget class="QPushButton" name="second_pushButton">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Рассчитать</string>
       </property>
      </widget>
     </item>
@@ -681,11 +739,14 @@
       </property>
      </widget>
     </item>
-    <item row="21" column="0">
+    <item row="22" column="0">
      <widget class="QLabel" name="third_name4">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <weight>50</weight>
         <italic>true</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
@@ -707,6 +768,8 @@
      <widget class="QLabel" name="fifth_title">
       <property name="font">
        <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -716,48 +779,8 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="4" colspan="2">
-     <widget class="QLabel" name="fourth_title">
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string> 4. Ресурс дискового ножа, ч</string>
-      </property>
-     </widget>
-    </item>
-    <item row="14" column="0" colspan="2">
-     <widget class="QLineEdit" name="second_lineEdit3">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
-      </property>
-      <property name="placeholderText">
-       <string>Относительное затупление, %</string>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="6">
-     <widget class="Line" name="line_4">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="0" colspan="2">
-     <widget class="QPushButton" name="second_pushButton">
+    <item row="5" column="0">
+     <widget class="QPushButton" name="first_pushButton">
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -773,6 +796,21 @@
       </property>
       <property name="text">
        <string>Рассчитать</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4" colspan="2">
+     <widget class="QLabel" name="fourth_title">
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string> 4. Ресурс дискового ножа, ч</string>
       </property>
      </widget>
     </item>
@@ -812,6 +850,9 @@
   <action name="about">
    <property name="text">
     <string>Описание</string>
+   </property>
+   <property name="shortcut">
+    <string/>
    </property>
   </action>
   <action name="authors">

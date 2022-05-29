@@ -27,6 +27,7 @@ class PlotWindow(QMainWindow):
         self.setMinimumSize(QSize(900, 650))
         self.setMaximumSize(QSize(900, 650))
         font = QtGui.QFont()
+        font.setFamily("Arial")
         font.setPointSize(12)
         font.setBold(True)
         self.setWindowTitle("Построение графика")

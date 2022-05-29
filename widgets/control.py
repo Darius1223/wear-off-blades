@@ -22,8 +22,8 @@ class ControlWidget(QWidget):
     def _init_ui(self):
         font = QtGui.QFont()
         font.setPointSize(10)
+        font.setFamily("Arial")
         font.setBold(True)
-        font.setItalic(True)
         self.setFont(font)
 
         self.formLayout = QFormLayout()
