@@ -6,13 +6,15 @@ import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.axes._subplots import Axes  # noqa
 
+from entities import PlotData
+
 
 class PlotWidget(QWidget):
     """Виджет для отображения графика"""
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
-        self.plot_data = self.parent().plot_data  # noqa
+        self.plot_data: PlotData = self.parent().plot_data  # noqa
 
         self.figure: Figure = plt.figure()
 
@@ -28,6 +30,26 @@ class PlotWidget(QWidget):
         layout.addWidget(self.toolbar)
         layout.addWidget(self.canvas)
         self.setLayout(layout)
+
+    def avg_plot(self):
+        self.figure.clear()
+        x, y = self.plot_data.avg_data
+
+        ax: Axes = self.figure.add_subplot()
+        ax.set_title("Средний график износа ножа")
+        ax.set_xlabel("Время, мин")
+        ax.set_ylabel("Износ ножа, мм")
+
+        ax.plot(
+            x,
+            y,
+            "*-",
+            label=f"Средний график",
+        )
+        ax.minorticks_on()
+        ax.grid(which="major")
+        ax.legend(fontsize=10)
+        self.canvas.draw()
 
     def plot(self):
         self.figure.clear()

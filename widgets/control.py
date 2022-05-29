@@ -8,6 +8,8 @@ from PyQt5.QtWidgets import (
     QPushButton,
 )
 
+from widgets import PlotWidget
+
 
 class ControlWidget(QWidget):
     """Виджет управления графиками"""
@@ -15,7 +17,7 @@ class ControlWidget(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent=parent)
         self.table = self.parent().table_widget  # noqa
-        self.plot_widget = self.parent().plot_widget  # noqa
+        self.plot_widget: PlotWidget = self.parent().plot_widget  # noqa
         self.plot_data = self.parent().plot_data  # noqa
         self._init_ui()
 
@@ -58,7 +60,7 @@ class ControlWidget(QWidget):
         # avg plot
         self.avg_plot_label = QLabel("Средний график:")
         self.avg_plot_button = QPushButton("Построить")
-        # self.plot_button.clicked.connect(self._plot_event)
+        self.avg_plot_button.clicked.connect(self._avg_plot_event)
         self.formLayout.insertRow(4, self.avg_plot_label, self.avg_plot_button)
 
     def _choice_plot_event(self, e):
@@ -78,6 +80,9 @@ class ControlWidget(QWidget):
 
     def _plot_event(self):
         self.plot_widget.plot()
+
+    def _avg_plot_event(self):
+        self.plot_widget.avg_plot()
 
     def _set_row_count_event(self):
         value = self.row_count_spin_box.value()
