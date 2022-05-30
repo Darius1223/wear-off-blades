@@ -1,1 +1,1 @@
-pyinstaller.exe --onefile --windowed app.py
+pyinstaller.exe --onefile --noconsole --icon=images/icon1.ico app.py
