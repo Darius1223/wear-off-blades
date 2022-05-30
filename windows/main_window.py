@@ -146,16 +146,10 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
                 value = calculate()
             except ZeroDivisionError:
                 raise ZeroDivisionError("На 0 делить нельзя.")
+            self.statusBar().showMessage(f"Результат: {value}", msecs=1000)
             result_field.setText(str(value))
 
         return _calculate_wear_event
-
-    @catch_handle
-    def _calculate_blunting_event(self):
-        self.data.before_test = self.get_integer(self.beforeTestLineEdit, "До испытаний")
-        self.data.after_test = self.get_integer(self.afterTestLineEdit, "После испытаний")
-        self.data.calculate_blunting()
-        self.wearLineEdit.setText(str(self.data.wear))
 
     def update_twin_items(self, first: QLineEdit, second: QLineEdit):  # noqa
         def update(e):

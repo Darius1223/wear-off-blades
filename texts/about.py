@@ -42,7 +42,7 @@ ABOUT_TEXT = """
   <tr>
 
    <td><p align="center">
-    <img src="./about_files/image002.gif">
+    <img src="./images/image002.gif">
    </p></td>
    <td width="10"><p align="center">(2)</p></td>
   </tr>
@@ -95,7 +95,7 @@ ABOUT_TEXT = """
 <tbody>
   <tr>
    <td><p align="center">
-    <img src="./about_files/image004.gif">
+    <img src="./images/image004.gif">
    </p>
 </td>
    <td width="10"><p align="center">(4)</p>
