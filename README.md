@@ -22,6 +22,10 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
+4. Для создания `.exe` файла необходимо запустить `to_exe.bat` (для Windows).
+
+### Скриншоты
+
 ![](images/screen1.png)
 
 ![](images/screen2.png)
