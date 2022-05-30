@@ -2,6 +2,9 @@
 
 --- 
 
+![WearOfBlade](https://user-images.githubusercontent.com/8982775/170992110-24c824ed-3f15-4163-8c8f-eaee65228f71.png)
+
+
 ### Тех. характеристики:
 
 * Python 3.10
