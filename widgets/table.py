@@ -1,4 +1,6 @@
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QHeaderView
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox
+
+from utils.messages import show_dialog
 
 
 class TableWidget(QTableWidget):
@@ -19,8 +21,18 @@ class TableWidget(QTableWidget):
         self.update_ui()
 
     def _update_data_by_table(self, row, col):
-        new_value = int(self.item(row, col).text())
-        self.plot_data.data[self.plot_data.current_plot_index][row][col] = new_value
+        try:
+            new_value = int(self.item(row, col).text())
+        except ValueError:
+            show_dialog(
+                title="Ошибка",
+                body="Таблица может принимать только числовые значения.",
+                msg_type=QMessageBox.Warning,
+            )
+            value = self.plot_data.data[self.plot_data.current_plot_index][row][col]
+            self.item(row, col).setText(f"{value}")
+        else:
+            self.plot_data.data[self.plot_data.current_plot_index][row][col] = new_value
 
     def update_row_count(self, value: int):
         self.plot_data.fill_rows(value)
