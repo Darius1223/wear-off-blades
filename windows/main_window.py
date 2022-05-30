@@ -18,7 +18,7 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         self._init_ui()
 
     def _init_ui(self):
-        self.setWindowIcon(QtGui.QIcon("images/icon1.ico"))
+        self.setWindowIcon(QtGui.QIcon(":/images/Icon1.ico"))
         self.plot_window = PlotWindow()
         self.start_plot_push_button.clicked.connect(self._start_plot_event)
         # Actions
