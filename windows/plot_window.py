@@ -1,7 +1,6 @@
 import sys
 
 from PyQt5 import QtGui
-from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import (
     QApplication,
     QMainWindow,

@@ -44,7 +44,7 @@ class PlotWidget(QWidget):
             x,
             y,
             "*-",
-            label=f"Средний график",
+            label="Средний график",
         )
         ax.minorticks_on()
         ax.grid(which="major")

@@ -854,13 +854,7 @@
     <addaction name="about_action"/>
     <addaction name="authors_action"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Помощь</string>
-    </property>
-   </widget>
    <addaction name="about_menu"/>
-   <addaction name="menu_2"/>
   </widget>
   <action name="about_action">
    <property name="text">

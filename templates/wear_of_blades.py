@@ -436,8 +436,6 @@ class Ui_WearOfBlades(object):
         self.about_menu = QtWidgets.QMenu(self.menuBar)
         self.about_menu.setSeparatorsCollapsible(False)
         self.about_menu.setObjectName("about_menu")
-        self.menu_2 = QtWidgets.QMenu(self.menuBar)
-        self.menu_2.setObjectName("menu_2")
         WearOfBlades.setMenuBar(self.menuBar)
         self.about_action = QtWidgets.QAction(WearOfBlades)
         self.about_action.setShortcut("")
@@ -448,7 +446,6 @@ class Ui_WearOfBlades(object):
         self.about_menu.addAction(self.about_action)
         self.about_menu.addAction(self.authors_action)
         self.menuBar.addAction(self.about_menu.menuAction())
-        self.menuBar.addAction(self.menu_2.menuAction())
 
         self.retranslateUi(WearOfBlades)
         QtCore.QMetaObject.connectSlotsByName(WearOfBlades)
@@ -501,6 +498,5 @@ class Ui_WearOfBlades(object):
         self.fourth_title.setText(_translate("WearOfBlades", " 4. Ресурс дискового ножа, ч"))
         self.beforeTestLineEdit.setPlaceholderText(_translate("WearOfBlades", "Значение, мм"))
         self.about_menu.setTitle(_translate("WearOfBlades", "О программе"))
-        self.menu_2.setTitle(_translate("WearOfBlades", "Помощь"))
         self.about_action.setText(_translate("WearOfBlades", "Описание"))
         self.authors_action.setText(_translate("WearOfBlades", "Авторы"))

@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QHeaderView
 
 
 class TableWidget(QTableWidget):
@@ -12,8 +12,9 @@ class TableWidget(QTableWidget):
     def _init_ui(self):
         self.setColumnCount(2)
         self.setHorizontalHeaderLabels(["Время, сек", "Износ ножа, мм"])
-        # self.setFixedWidth(225)
-        self.setMaximumWidth(300)
+        self.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
+        self.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
+        self.setMaximumWidth(350)
         self.cellChanged.connect(self._update_data_by_table)
         self.update_ui()
 
