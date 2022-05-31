@@ -146,7 +146,7 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
             self._update_twin_items(first, second)
 
     def _calculate_event(self, fields, calculate, result_field):
-        """ Генерирование events-сигналов для секций """
+        """Генерирование events-сигналов для секций"""
 
         @catch_handle
         def _calculate_wear_event(*args, **kwargs):  # noqa
@@ -164,7 +164,7 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         return _calculate_wear_event
 
     def _update_twin_items(self, first: QLineEdit, second: QLineEdit):  # noqa
-        """ Генерирование events-сигналов для близнецов """
+        """Генерирование events-сигналов для близнецов"""
 
         def update(e):
             second.setText(e)
