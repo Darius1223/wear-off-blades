@@ -79,10 +79,10 @@ class ControlWidget(QWidget):
             self.dropdown.addItem(f"График №{i}", i)
 
     def _plot_event(self):
-        self.plot_widget.plot()
+        self.plot_widget.plot_event()
 
     def _avg_plot_event(self):
-        self.plot_widget.avg_plot()
+        self.plot_widget.avg_plot_event()
 
     def _set_row_count_event(self):
         value = self.row_count_spin_box.value()

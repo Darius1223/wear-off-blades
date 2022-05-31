@@ -14,6 +14,8 @@ from widgets import PlotWidget, ControlWidget, TableWidget
 
 
 class PlotWindow(QMainWindow):
+    """ Окно построения графика """
+
     def __init__(self):
         super().__init__()
         self.plot_data = PlotData()  # data

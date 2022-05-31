@@ -4,6 +4,8 @@ import math
 
 @dataclass
 class WearData:
+    """ Хранение данных для вычилений (первое окно) """
+
     # 1
     after_test: float = 0
     before_test: float = 0
@@ -31,7 +33,8 @@ class WearData:
         return self.blunting
 
     def calculate_operating_time(self):
-        self.operating_time = math.pi * self.frequency * self.time_test * (self.after_test + self.before_test) / 2000
+        self.operating_time = math.pi * self.frequency * self.time_test * (
+                    self.after_test + self.before_test) / 2000
         return self.operating_time
 
     def calculate_resource(self):
