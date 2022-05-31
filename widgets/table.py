@@ -22,7 +22,7 @@ class TableWidget(QTableWidget):
 
     def _update_data_by_table(self, row, col):
         try:
-            new_value = int(self.item(row, col).text())
+            new_value = float(self.item(row, col).text().replace(",", "."))
         except ValueError:
             show_dialog(
                 title="Ошибка",
