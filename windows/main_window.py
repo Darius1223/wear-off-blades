@@ -46,6 +46,13 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
 
         self.authors_action.setShortcut(QKeySequence("F2"))
         # Events
+        # Далее: мегахак
+        # Т.к. первое окно состоит из 5 похожых секций
+        # я запилил список словарей для каждого из них, где
+        # == fields: Tuple(источник_данных, его_название, куда_класть)
+        # == calculate: функция вычисления результата
+        # == result_field: куда класть результат
+        # == button: кнопка-триггер которая запускает вычления
         section_events = [
             {
                 "fields": [
@@ -98,7 +105,7 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
         ]
         for section_event in section_events:
             section_event["button"].clicked.connect(
-                self.calculate_event(
+                self._calculate_event(
                     fields=section_event["fields"],
                     calculate=section_event["calculate"],
                     result_field=section_event["result_field"],
@@ -124,6 +131,9 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
             line_edit.setValidator(validator)
 
         # Twins
+        # Второй мегахак:
+        # В исходной проге были LineEdit - близнецы: заполняем первый -> заполняется второй
+        # twins - список близнецов
         twins = [
             (self.beforeTestLineEdit, self.beforeTestLineEdit2),
             (self.afterTestLineEdit, self.afterTestLineEdit2),
@@ -133,14 +143,16 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
             (self.maxSpeedLineEdit, self.maxSpeedLineEdit2),
         ]
         for first, second in twins:
-            self.update_twin_items(first, second)
+            self._update_twin_items(first, second)
 
-    def calculate_event(self, fields, calculate, result_field):
+    def _calculate_event(self, fields, calculate, result_field):
+        """Генерирование events-сигналов для секций"""
+
         @catch_handle
         def _calculate_wear_event(*args, **kwargs):  # noqa
             for field in fields:
                 line_edit, field_name, attr_name = field
-                value = self.get_integer(line_edit, field_name)
+                value = self._get_digit_from_item(line_edit, field_name)
                 self.data.__setattr__(attr_name, value)
             try:
                 value = calculate()
@@ -151,13 +163,15 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
 
         return _calculate_wear_event
 
-    def update_twin_items(self, first: QLineEdit, second: QLineEdit):  # noqa
+    def _update_twin_items(self, first: QLineEdit, second: QLineEdit):  # noqa
+        """Генерирование events-сигналов для близнецов"""
+
         def update(e):
             second.setText(e)
 
         first.textChanged.connect(update)  # noqa
 
-    def get_integer(self, item: QLineEdit, field_name: str):  # noqa
+    def _get_digit_from_item(self, item: QLineEdit, field_name: str):  # noqa
         if item.text():
             return float(item.text().replace(",", "."))
         raise ValueError(f"Поле '{field_name}' должно быть заполнено")

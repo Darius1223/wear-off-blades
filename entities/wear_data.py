@@ -4,6 +4,8 @@ import math
 
 @dataclass
 class WearData:
+    """Хранение данных для вычилений (первое окно)"""
+
     # 1
     after_test: float = 0
     before_test: float = 0
