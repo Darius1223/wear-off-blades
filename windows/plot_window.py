@@ -23,7 +23,7 @@ class PlotWindow(QMainWindow):
         self._init_ui()
 
     def _init_ui(self):
-        self.setWindowIcon(QtGui.QIcon("images/icon1.ico"))
+        self.setWindowIcon(QtGui.QIcon(":/images/Icon1.ico"))
         # self.resize(900, 650)
         # self.setMinimumSize(QSize(900, 650))
         # self.setMaximumSize(QSize(900, 650))
