@@ -13,7 +13,7 @@ class TableWidget(QTableWidget):
 
     def _init_ui(self):
         self.setColumnCount(2)
-        self.setHorizontalHeaderLabels(["Время, сек", "Износ ножа, мм"])
+        self.setHorizontalHeaderLabels(["Время, мин", "Износ ножа, мм"])
         self.horizontalHeader().setSectionResizeMode(0, QHeaderView.Stretch)
         self.horizontalHeader().setSectionResizeMode(1, QHeaderView.Stretch)
         self.setMaximumWidth(350)
