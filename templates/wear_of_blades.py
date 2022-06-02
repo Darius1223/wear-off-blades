@@ -453,7 +453,7 @@ class Ui_WearOfBlades(object):
     def retranslateUi(self, WearOfBlades):
         _translate = QtCore.QCoreApplication.translate
         WearOfBlades.setWindowTitle(_translate("WearOfBlades", "WearOfBlades"))
-        self.fourth_name2.setText(_translate("WearOfBlades", "Макс. скорость резания, мин"))
+        self.fourth_name2.setText(_translate("WearOfBlades", "Макс. скорость резания, м/мин"))
         self.operatingTimeLneEdit_2.setPlaceholderText(_translate("WearOfBlades", "Значение, м"))
         self.label_2.setText(_translate("WearOfBlades", "WearOfBlades"))
         self.operatingTimeLneEdit3.setPlaceholderText(_translate("WearOfBlades", "Значение, м"))
@@ -482,7 +482,7 @@ class Ui_WearOfBlades(object):
         self.first_name1.setText(_translate("WearOfBlades", "До испытаний, мм"))
         self.label.setText(_translate("WearOfBlades", "6. Построение графика"))
         self.afterTestLineEdit.setPlaceholderText(_translate("WearOfBlades", "Значение, мм"))
-        self.maxSpeedLineEdit.setPlaceholderText(_translate("WearOfBlades", "Значение, мин"))
+        self.maxSpeedLineEdit.setPlaceholderText(_translate("WearOfBlades", "Значение, м/мин"))
         self.start_plot_push_button.setText(_translate("WearOfBlades", "Построение графика износа ножа"))
         self.second_name1.setText(_translate("WearOfBlades", "Радиус затупления, мм"))
         self.second_name2.setText(_translate("WearOfBlades", "Толщина лезвия, мм"))
