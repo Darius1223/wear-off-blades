@@ -1,2 +1,17 @@
 [tool.black]
 line-length = 120
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | venv
+    | build
+    | dist
+  )/
+  | ^migrations/
+)
+'''

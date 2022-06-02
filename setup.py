@@ -23,7 +23,7 @@ setup(
             target_name="WearOfBlades",
             shortcut_name="WearOfBlades",
             shortcut_dir="WearOfBlades",
-            copyright="Copyright (C) 2022 WearOfBlades"
+            copyright="Copyright (C) 2022 WearOfBlades",
         )
     ],
 )
