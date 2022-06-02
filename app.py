@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication
-import resources  # noqa
+from resources import resources  # noqa
 
 from windows import MainWindow
 
