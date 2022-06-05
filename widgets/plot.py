@@ -61,4 +61,6 @@ class PlotWidget(QWidget):
         ax.minorticks_on()
         ax.grid(which="major")
         ax.legend(fontsize=10)
+        ax.set_ylim(ymin=0)
+        ax.set_xlim(xmin=0)
         self.canvas.draw()

@@ -26,20 +26,20 @@ class WearData:
 
     def calculate_wear(self):
         self.wear = self.before_test - self.after_test
-        return self.wear
+        return str(round(self.wear, 3)).replace(".", ",")
 
     def calculate_blunting(self):
         self.blunting = 2 * self.radius / self.width * 100
-        return self.blunting
+        return str(round(self.blunting, 3)).replace(".", ",")
 
     def calculate_operating_time(self):
         self.operating_time = math.pi * self.frequency * self.time_test * (self.after_test + self.before_test) / 2000
-        return self.operating_time
+        return str(round(self.operating_time, 3)).replace(".", ",")
 
     def calculate_resource(self):
         self.resource = self.operating_time / (60 * self.max_speed)
-        return self.resource
+        return str(round(self.resource, 3)).replace(".", ",")
 
     def calculate_ratio(self):
         self.ratio = self.operating_time / (self.time_test * self.max_speed)
-        return self.ratio
+        return str(round(self.ratio, 3)).replace(".", ",")
