@@ -1,4 +1,5 @@
 from PyQt5 import QtGui
+from PyQt5.QtCore import QRegExp
 from PyQt5.QtGui import QDoubleValidator, QKeySequence
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QMessageBox
 
@@ -112,23 +113,7 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
                 )
             )
 
-        # Validators
-        validator = QDoubleValidator()
-        line_edits = [
-            self.beforeTestLineEdit,
-            self.afterTestLineEdit,
-            self.beforeTestLineEdit2,
-            self.afterTestLineEdit2,
-            self.radiusLineEdit,
-            self.bluntingLineEdit,
-            self.timeTestLineEdit,
-            self.timeTestLineEdit2,
-            self.operatingTimeLneEdit,
-            self.frequencLineEdit,
-            self.widthLineEdit,
-        ]
-        for line_edit in line_edits:
-            line_edit.setValidator(validator)
+
 
         # Twins
         # Второй мегахак:
