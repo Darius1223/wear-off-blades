@@ -17,7 +17,7 @@ if sys.platform == "win32":
 
 setup(
     name="WearOfBlades",
-    version="0.1",
+    version="1.2.",
     description="WearOfBlades GUI application",
     options={"build_exe": build_exe_options},
     executables=[

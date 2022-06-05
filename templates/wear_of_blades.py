@@ -455,7 +455,7 @@ class Ui_WearOfBlades(object):
         WearOfBlades.setWindowTitle(_translate("WearOfBlades", "WearOfBlades"))
         self.fourth_name2.setText(_translate("WearOfBlades", "Макс. скорость резания, м/мин"))
         self.operatingTimeLneEdit_2.setPlaceholderText(_translate("WearOfBlades", "Значение, м"))
-        self.label_2.setText(_translate("WearOfBlades", "WearOfBlades"))
+        self.label_2.setText(_translate("WearOfBlades", "WearOfBlades v.1.2"))
         self.operatingTimeLneEdit3.setPlaceholderText(_translate("WearOfBlades", "Значение, м"))
         self.third_name3.setText(_translate("WearOfBlades", " <b>Диаметр ножа до испытания, мм</b>"))
         self.third_name2.setText(_translate("WearOfBlades", " <b>Время исптания ножа, мин</b>"))
