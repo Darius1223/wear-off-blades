@@ -1,6 +1,5 @@
 from PyQt5 import QtGui
-from PyQt5.QtCore import QRegExp
-from PyQt5.QtGui import QDoubleValidator, QKeySequence
+from PyQt5.QtGui import QKeySequence
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QMessageBox
 
 import texts
@@ -112,8 +111,6 @@ class MainWindow(QMainWindow, Ui_WearOfBlades):
                     result_field=section_event["result_field"],
                 )
             )
-
-
 
         # Twins
         # Второй мегахак:
