@@ -3,7 +3,12 @@ from cx_Freeze import setup, Executable
 
 # Dependencies are automatically detected, but it might need fine tuning.
 # "packages": ["os"] is used as example only
-build_exe_options = {"packages": ["PyQt5"]}
+build_exe_options = {
+    "packages": ["PyQt5"],
+    "excludes": ["unittest", "test", "numpy", "email"],
+
+    "zip_include_packages": ['matplotlib', 'PyQt5', 'PIL', "tkinter"],
+}
 
 # base="Win32GUI" should be used only for Windows GUI app
 base = None
