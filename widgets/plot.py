@@ -4,7 +4,7 @@ from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as Navigatio
 import matplotlib.pyplot as plt
 
 from matplotlib.figure import Figure
-from matplotlib.axes._subplots import Axes  # noqa
+from matplotlib.axes import Axes
 
 from entities import PlotData
 
