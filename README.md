@@ -29,6 +29,7 @@ python app.py
 ```
 
 4. Для создания `.exe` файла необходимо запустить `to_exe.bat` (для Windows).
+4. UPD pyinstaller --noconsole --onefile app.py
 
 ### Скриншоты
 
